@@ -20,4 +20,11 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: 'maven'
-          
+      - name: Run Headless Selenium Tests
+        run: mvn clean test
+      - name: Upload Test Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: surefire-reports
+          path: target/surefire-reports/
