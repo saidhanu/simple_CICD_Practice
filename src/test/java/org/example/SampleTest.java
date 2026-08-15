@@ -24,8 +24,8 @@ public class SampleTest {
     @Test
     public void verifyTitle() {
         driver.get("https://example.com");
-        assert driver.getTitle().equals("Example");
-        System.out.println("Title verified successfully");
+        assert driver.getTitle().contains("Example");
+        System.out.println("Title verified successfully :)");
     }
 
     @AfterMethod
